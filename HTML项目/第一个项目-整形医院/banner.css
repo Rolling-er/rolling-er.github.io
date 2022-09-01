@@ -1,0 +1,113 @@
+.banner .top {
+  background-color: #466f71;
+}
+.banner .top .tt {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner .top .tt ul.phone {
+  float: left;
+  margin: 10px 0;
+}
+.banner .top .tt ul.phone li {
+  float: left;
+  color: white;
+  margin-right: 20px;
+  font-size: 12px;
+}
+.banner .top .tt ul.phone li i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+.banner .top .tt ul.four {
+  float: right;
+  margin: 10px 0;
+}
+.banner .top .tt ul.four li {
+  float: left;
+  margin-left: 20px;
+}
+.banner .top .tt ul.four li i {
+  color: white;
+}
+.banner .top-nav .tu-nav {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner .top-nav .tu-nav .tu {
+  float: left;
+}
+.banner .top-nav .tu-nav .tu img {
+  padding: 20px 0;
+  margin: 65px 0;
+}
+.banner .top-nav .tu-nav ul.nav {
+  float: right;
+  padding: 20px 0;
+  line-height: 50px;
+  font-weight: bold;
+}
+.banner .top-nav .tu-nav ul.nav li {
+  float: left;
+  margin-right: 30px;
+}
+.banner .top-nav .tu-nav ul.nav li a {
+  text-decoration: none;
+}
+.banner .top-nav .tu-nav ul.nav li a:hover {
+  text-decoration: underline;
+}
+.banner .top-nav .tu-nav ul.nav li.home {
+  text-decoration: underline;
+}
+.banner .top-nav .tu-nav ul.nav .nav-btn {
+  border: 1px solid blue;
+  border-radius: 5px;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 50px;
+  padding: 0 10px;
+}
+.banner .top-nav .tu-nav ul.nav .nav-btn a {
+  text-decoration: none;
+}
+.banner .top-nav .tu-nav ul.nav .nav-btn a:hover {
+  text-decoration: none;
+}
+.banner .pic {
+  background-image: url("imgs/hero-bg.jpg");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-size: cover;
+  height: 596px;
+}
+.banner .pic .wenzi {
+  height: 236px;
+  width: 1000px;
+  margin: 10px auto;
+}
+.banner .pic .wenzi .wenzi2 {
+  padding: 150px 0;
+}
+.banner .pic .wenzi .wenzi2 span {
+  color: #449a9a;
+  font-weight: bold;
+}
+.banner .pic .wenzi .wenzi2 h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.banner .pic .wenzi .wenzi2 .pic-btn {
+  color: white;
+  background-color: #449a9a;
+  border-style: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=./banner.css.map */

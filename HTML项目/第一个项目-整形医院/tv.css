@@ -1,0 +1,54 @@
+.nav {
+  margin: 50px 0;
+}
+.nav .txt {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+}
+.nav .txt .zi {
+  float: left;
+  width: 50%;
+  padding: 50px 0;
+}
+.nav .txt .zi p {
+  font-size: 12px;
+  color: #a5a9ac;
+}
+.nav .txt .zi h2 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+.nav .txt .zi h2.cl {
+  color: #65c8c8;
+  line-height: 10px;
+}
+.nav .txt .zi .long {
+  font-size: 10px;
+  color: #c2c5c7;
+  margin-top: 10px;
+  width: 250px;
+}
+.nav .txt .view {
+  overflow: hidden;
+}
+.nav .txt .view .tv {
+  width: 100%;
+  float: right;
+  background-image: url("imgs/consultation-video (1).jpg");
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  line-height: 250px;
+}
+.nav .txt .view .tv i {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #a5a5df;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=./tv.css.map */

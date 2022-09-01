@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.blog .wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.blog .wrap h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.blog .wrap h3 span {
+  font-weight: lighter;
+}
+.blog .wrap .show {
+  width: 30%;
+  float: left;
+  margin-left: 20px;
+  box-shadow: 0 0 3px 0 black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.blog .wrap .show .wuping {
+  font-size: 0;
+  width: 100%;
+  position: relative;
+}
+.blog .wrap .show .wuping:hover .yin img {
+  transform: scale(1.2);
+}
+.blog .wrap .show .wuping:hover .zhezhao {
+  transform: scale(1);
+}
+.blog .wrap .show .wuping .yin {
+  overflow: hidden;
+}
+.blog .wrap .show .wuping .yin img {
+  width: 100%;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: all 0.5s;
+  background-position: center;
+  background-size: cover;
+}
+.blog .wrap .show .wuping .zhezhao {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(255, 0, 0, 0.514);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transform: scale(0);
+  transition: all 0.5s;
+  text-align: center;
+}
+.blog .wrap .show .wuping .zhezhao i {
+  font-size: 20px;
+  color: white;
+  margin-top: 80px;
+}
+.blog .wrap .show .wuping .chaozuo {
+  padding-top: 20px;
+}
+.blog .wrap .show .wuping .chaozuo::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.blog .wrap .show .wuping .chaozuo .fl {
+  float: left;
+}
+.blog .wrap .show .wuping .chaozuo .fl a {
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 15px;
+  color: black;
+}
+.blog .wrap .show .wuping .chaozuo .fl a i {
+  color: red;
+  margin-right: 5px;
+}
+.blog .wrap .show .wuping .chaozuo .fr {
+  float: right;
+}
+.blog .wrap .show .wuping .chaozuo .fr i {
+  font-size: 14px;
+  color: red;
+  margin-right: 5px;
+}
+.blog .wrap .show .wuping .chaozuo .fr span {
+  font-size: 14px;
+  margin-right: 15px;
+}
+.blog .wrap .show .wuping .chaozuo .sb {
+  float: left;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.blog .wrap .show .wuping .chaozuo .sb h5 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.blog .wrap .show .wuping .chaozuo .sb p {
+  width: 100%;
+  font-size: 14px;
+  line-height: 25px;
+}
+.blog .wrap .show .wuping .chaozuo .sb span {
+  font-size: 16px;
+  line-height: 50px;
+}
+.blog .wrap .show .wuping .chaozuo .sb span a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid red;
+  font-weight: 600;
+}
+/*# sourceMappingURL=./blog.css.map */

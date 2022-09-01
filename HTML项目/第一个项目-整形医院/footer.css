@@ -1,0 +1,89 @@
+.footer {
+  background-color: #000000;
+}
+.footer .wrap {
+  border-bottom: 1px solid #767676;
+}
+.footer .wrap .find {
+  margin: 0 auto;
+  width: 1000px;
+  overflow: hidden;
+}
+.footer .wrap .find img {
+  float: left;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+.footer .wrap .find ul {
+  float: right;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.footer .wrap .find ul li {
+  float: left;
+  color: white;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #4d4d4e;
+  margin-left: 10px;
+}
+.footer .wrap .find ul li i {
+  font-size: 18px;
+}
+.footer .company {
+  overflow: hidden;
+  width: 1000px;
+  margin: 0 auto;
+}
+.footer .company .left {
+  overflow: hidden;
+  float: left;
+  margin-top: 50px;
+}
+.footer .company .left .box {
+  height: 210px;
+  float: left;
+  padding-right: 50px;
+  color: white;
+}
+.footer .company .left .box h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.footer .company .left .box ul.sub {
+  padding-top: 20px;
+  font-size: 10px;
+}
+.footer .company .left .box ul.sub li {
+  margin-top: 10px;
+}
+.footer .company .left .box ul.sub li i {
+  margin: 0 20px 20px 0;
+}
+.footer .company .right {
+  float: right;
+  background-color: #be7e09;
+  height: 210px;
+  width: 300px;
+  margin-top: 50px;
+}
+.footer .bottom {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  color: white;
+}
+.footer .bottom .lt {
+  float: left;
+  font-size: 10px;
+  margin-top: 50px;
+}
+.footer .bottom .rt {
+  float: right;
+  font-size: 10px;
+  margin-top: 50px;
+}
+/*# sourceMappingURL=./footer.css.map */

@@ -1,0 +1,104 @@
+.new {
+  // background-color: aqua;
+  padding: 50px;
+
+  .wrapper {
+    width: 1000px;
+    // background-color: aquamarine;
+    margin: 0 auto;
+    height: 450px;
+
+    // 根据情况加padding或margin 你要这个部分居中的话就
+    // 加一个上下为0左右自动的外边距
+    header {
+      overflow: hidden;
+
+      .title {
+        float: left;
+
+        p {
+          font-size: 14px;
+          margin-left: 20px;
+        }
+
+        h3 {
+          font-weight: bolder;
+          font-size: 28px;
+          margin-left: 20px;
+        }
+      }
+
+      button {
+        float: right;
+        margin-right: 20px;
+        text-transform: uppercase;
+        // 字体换成大写
+        // width: 200px;
+      }
+    }
+
+    ul.list {
+      // background-color: blueviolet;
+      padding: 20px 0;
+      overflow: hidden;
+
+      li {
+        // overflow: hidden;
+        //浮动在这里，超出隐藏就要放在父级元素
+        width: 33.33%;
+        // background-color: brown;
+        box-sizing: border-box;
+        // box-sizing: border-box给需要变成盒模块
+        padding: 20px;
+        float: left;
+
+        .card {
+          // background-color: rgb(224, 230, 230);
+          //   border: 1px solid red;
+          box-shadow: 0 0 10px black;
+          border-radius: 5px;
+          padding: 20px;
+          text-align: left;
+
+          &:hover {
+            box-shadow: 0 0 20px black;
+          }
+
+          a {
+            font-size: 20px;
+            color: rgb(64, 64, 64);
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          p {
+            margin: 14px 0;
+            font-size: 20px;
+            color: rgb(124, 126, 128);
+          }
+
+          .author {
+            color: rgb(145, 148, 150);
+            line-height: 50px;
+
+            .avatar {
+              border-radius: 50%;
+              vertical-align: middle;
+            }
+
+            .name {
+              vertical-align: middle;
+            }
+
+            .time {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}

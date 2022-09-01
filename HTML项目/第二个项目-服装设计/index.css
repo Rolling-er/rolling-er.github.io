@@ -1,0 +1,808 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.banner {
+  background-color: black;
+}
+.banner .wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.banner .wrap::after {
+  content: "";
+  clear: left;
+  display: block;
+}
+.banner .wrap .logo {
+  color: white;
+  float: left;
+  padding: 10px;
+  line-height: 30px;
+}
+.banner .wrap .logo h3 {
+  font-weight: 500;
+  font-size: 28px;
+}
+.banner .wrap .logo h3 span {
+  font-weight: 100;
+  font-size: 26px;
+}
+.banner .wrap .nav-menu {
+  float: right;
+}
+.banner .wrap .nav-menu::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.banner .wrap .nav-menu .menu {
+  float: left;
+  line-height: 50px;
+}
+.banner .wrap .nav-menu .menu ul.list {
+  float: left;
+  margin-right: 60px;
+}
+.banner .wrap .nav-menu .menu ul.list :nth-child(1) a {
+  color: #b51636;
+}
+.banner .wrap .nav-menu .menu ul.list li {
+  float: left;
+  margin: 0 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.banner .wrap .nav-menu .menu ul.list li:hover a {
+  color: #b51636;
+}
+.banner .wrap .nav-menu .menu ul.list li a {
+  text-decoration: none;
+  color: white;
+}
+.banner .wrap .nav-menu .search {
+  float: right;
+  line-height: 50px;
+}
+.banner .wrap .nav-menu .search .search-icon {
+  font-size: 0;
+  float: left;
+}
+.banner .wrap .nav-menu .search .search-icon input {
+  height: 32px;
+  padding-left: 10px;
+  border-radius: 32px 0 0 32px;
+  vertical-align: middle;
+  border: none;
+}
+.banner .wrap .nav-menu .search .search-icon i {
+  background-color: red;
+  border-radius: 0 32px 32px 0;
+  width: 32px;
+  height: 32px;
+  color: white;
+  font-size: 16px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 32px;
+}
+.banner .wrap .nav-menu .search .moon {
+  float: right;
+}
+.banner .wrap .nav-menu .search .moon:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.banner .wrap .nav-menu .search .moon i {
+  float: right;
+  font-size: 16px;
+  line-height: 50px;
+  margin-left: 10px;
+  color: white;
+}
+.banner .bgc {
+  width: 100%;
+  background-image: url("bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+.banner .bgc .picture {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.banner .bgc .picture .wrap .wenzi {
+  color: white;
+  float: left;
+  margin-top: 200px;
+  text-transform: uppercase;
+}
+.banner .bgc .picture .wrap .wenzi .new-bgc {
+  display: table;
+  height: 50px;
+  background-color: rgba(148, 142, 142, 0.548);
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.banner .bgc .picture .wrap .wenzi .new-bgc span {
+  margin-left: 10px;
+  line-height: 28px;
+  font-size: 20px;
+}
+.banner .bgc .picture .wrap .wenzi h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  margin: 20px 0;
+}
+.banner .bgc .picture .wrap .wenzi h1 span {
+  font-weight: 200;
+}
+.banner .bgc .picture .wrap .wenzi button {
+  width: 180px;
+  height: 50px;
+  font-size: 20px;
+  display: block;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  background-color: red;
+  border-style: none;
+  transition: all 1s;
+}
+.banner .bgc .picture .wrap .wenzi button:hover {
+  background-color: orange;
+}
+.services .wrap h3 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.services .wrap h3 span {
+  font-weight: 100;
+}
+.services .wrap button {
+  background-color: red;
+  position: relative;
+  top: 20px;
+  left: 425px;
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  border: none;
+  transition: all 1s;
+}
+.services .wrap button:hover {
+  background-color: orange;
+}
+.services .wrap .heimei {
+  float: left;
+  width: 230px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 10px;
+  margin-top: 20px;
+}
+.services .wrap .heimei:hover .zhezhao {
+  transform: scale(1);
+}
+.services .wrap .heimei:hover i {
+  opacity: 0;
+}
+.services .wrap .heimei img {
+  width: 220px;
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.services .wrap .heimei i {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  bottom: 5px;
+  left: 1px;
+  border-radius: 0 0 0 10px;
+  color: white;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.services .wrap .heimei .zhezhao {
+  background-color: rgba(255, 6, 6, 0.453);
+  position: absolute;
+  height: 285px;
+  width: 220px;
+  top: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+.services .wrap .heimei .zhezhao .zi {
+  color: white;
+  position: absolute;
+  top: 100px;
+  left: 15px;
+}
+.services .wrap .heimei .zhezhao .zi h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.services .wrap .heimei .zhezhao .zi p {
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 20px;
+}
+.card {
+  background-color: rgba(168, 167, 167, 0.073);
+}
+.card .wrap {
+  width: 1000px;
+}
+.card .wrap::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.card .wrap h3 {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+.card .wrap h3 span {
+  font-weight: 100;
+}
+.card .wrap .list {
+  margin: 0 15px;
+  margin-top: 10px;
+  float: left;
+  margin-bottom: 20px;
+}
+.card .wrap .list .box {
+  width: 300px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.367);
+}
+.card .wrap .list .box:hover {
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.367);
+}
+.card .wrap .list .box:hover .clear span {
+  color: grey;
+}
+.card .wrap .list .box .clear {
+  padding-top: 10px;
+}
+.card .wrap .list .box .clear::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.card .wrap .list .box .clear i {
+  float: left;
+  font-size: 40px;
+  color: red;
+}
+.card .wrap .list .box .clear span {
+  float: right;
+  font-size: 40px;
+  color: rgba(177, 177, 177, 0.648);
+  transition: all 0.5s;
+}
+.card .wrap .list .box .jieshi > a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  transition: all 1s;
+  line-height: 50px;
+  color: black;
+}
+.card .wrap .list .box .jieshi > a:hover {
+  color: red;
+}
+.card .wrap .list .box .jieshi h5 {
+  margin-top: 10px;
+}
+.card .wrap .list .box .jieshi h5 a {
+  text-decoration: none;
+  border-bottom: 1px solid red;
+  color: black;
+}
+.view .wrap {
+  margin-top: 50px;
+}
+.view .wrap .introduce {
+  float: left;
+  width: 40%;
+}
+.view .wrap .introduce h3 {
+  font-size: 25px;
+}
+.view .wrap .introduce h3 span {
+  font-weight: lighter;
+  color: gray;
+}
+.view .wrap .introduce p {
+  font-size: 14px;
+  margin: 10px 0;
+  color: gray;
+  line-height: 20px;
+}
+.view .wrap .introduce button {
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  border-style: none;
+  color: white;
+  transition: all 1s;
+  margin-top: 30px;
+}
+.view .wrap .introduce button:hover {
+  background-color: orange;
+}
+.view .wrap .tv {
+  position: relative;
+}
+.view .wrap .tv img {
+  float: right;
+  width: 600px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.view .wrap .tv .border {
+  width: 590px;
+  height: 340px;
+  border: 10px solid gray;
+  position: absolute;
+  top: -20px;
+  left: 410px;
+  z-index: -1;
+}
+.view .wrap .tv .icon a:hover i {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+  top: 145px;
+  right: 265px;
+}
+.view .wrap .tv .icon a i {
+  transition: all 0.3s;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  top: 150px;
+  right: 265px;
+  text-align: center;
+  line-height: 50px;
+  color: red;
+  border-radius: 50px;
+  box-shadow: 0 0 20px 20px #ffffff;
+}
+.design .bgc {
+  background-image: url("bg1.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.design .bgc .zhezhao {
+  margin-top: 450px;
+  height: 300px;
+  background-color: rgba(6, 6, 6, 0.218);
+}
+.design .bgc .zhezhao .wrap {
+  color: white;
+}
+.design .bgc .zhezhao .wrap > h3 {
+  padding-top: 100px;
+  font-size: 40px;
+}
+.design .bgc .zhezhao .wrap > h3 span {
+  font-weight: lighter;
+}
+.design .bgc .zhezhao .wrap p {
+  width: 50%;
+  line-height: 25px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.design .bgc .zhezhao .wrap button {
+  float: right;
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  position: relative;
+  bottom: 80px;
+  background-color: red;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: all 1s;
+}
+.design .bgc .zhezhao .wrap button:hover {
+  background-color: orange;
+}
+.design .introduce {
+  width: 100%;
+  position: relative;
+}
+.design .introduce::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.design .introduce .tu {
+  right: 0;
+  width: 50%;
+  position: absolute;
+  height: 100%;
+  font-size: 0;
+}
+.design .introduce .tu img {
+  width: 100%;
+  height: 100%;
+}
+.design .introduce .first {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  float: left;
+}
+.design .introduce .first h3 {
+  box-sizing: border-box;
+  padding-top: 40px;
+  line-height: 100px;
+  font-size: 30px;
+}
+.design .introduce .first h3 span {
+  font-weight: lighter;
+}
+.design .introduce .first p {
+  line-height: 28px;
+}
+.design .introduce .first button {
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: red;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 1s;
+}
+.design .introduce .first button:hover {
+  background-color: orange;
+}
+.design .second {
+  height: 400px;
+}
+.design .second ul li.tp {
+  float: left;
+  width: 25%;
+  min-height: 400px;
+}
+.design .second ul li.tp img {
+  width: 100%;
+  height: 400px;
+}
+.design .second ul li.wenzi {
+  float: left;
+  width: 25%;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 10px;
+  background-color: #c9c4c4;
+  padding-top: 50px;
+  height: 400px;
+}
+.design .second ul li.wenzi i {
+  color: red;
+  font-size: 30px;
+}
+.design .second ul li.wenzi h5 {
+  padding-top: 20px;
+}
+.design .second ul li.wenzi h5 a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.design .second ul li.wenzi p {
+  padding-top: 20px;
+  line-height: 25px;
+}
+.blog {
+  margin-top: 20px;
+}
+.blog .wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.blog .wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.blog .wrap h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.blog .wrap h3 span {
+  font-weight: lighter;
+}
+.blog .wrap .show {
+  width: 30%;
+  float: left;
+  margin-left: 20px;
+  box-shadow: 0 0 3px 0 black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.blog .wrap .show .wuping {
+  font-size: 0;
+  width: 100%;
+  position: relative;
+}
+.blog .wrap .show .wuping:hover .yin img {
+  transform: scale(1.2);
+}
+.blog .wrap .show .wuping:hover .zhezhao {
+  transform: scale(1);
+}
+.blog .wrap .show .wuping .yin {
+  overflow: hidden;
+}
+.blog .wrap .show .wuping .yin img {
+  width: 100%;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: all 0.5s;
+  background-position: center;
+  background-size: cover;
+}
+.blog .wrap .show .wuping .zhezhao {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(255, 0, 0, 0.514);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transform: scale(0);
+  transition: all 0.5s;
+  text-align: center;
+}
+.blog .wrap .show .wuping .zhezhao i {
+  font-size: 20px;
+  color: white;
+  margin-top: 80px;
+}
+.blog .wrap .show .wuping .chaozuo {
+  padding-top: 20px;
+}
+.blog .wrap .show .wuping .chaozuo::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+.blog .wrap .show .wuping .chaozuo .fl {
+  float: left;
+}
+.blog .wrap .show .wuping .chaozuo .fl a {
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 15px;
+  color: black;
+}
+.blog .wrap .show .wuping .chaozuo .fl a i {
+  color: red;
+  margin-right: 5px;
+}
+.blog .wrap .show .wuping .chaozuo .fr {
+  float: right;
+}
+.blog .wrap .show .wuping .chaozuo .fr i {
+  font-size: 14px;
+  color: red;
+  margin-right: 5px;
+}
+.blog .wrap .show .wuping .chaozuo .fr span {
+  font-size: 14px;
+  margin-right: 15px;
+}
+.blog .wrap .show .wuping .chaozuo .sb {
+  float: left;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.blog .wrap .show .wuping .chaozuo .sb h5 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.blog .wrap .show .wuping .chaozuo .sb p {
+  width: 100%;
+  font-size: 14px;
+  line-height: 25px;
+}
+.blog .wrap .show .wuping .chaozuo .sb span {
+  font-size: 16px;
+  line-height: 50px;
+}
+.blog .wrap .show .wuping .chaozuo .sb span a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid red;
+  font-weight: 600;
+}
+.foot {
+  background-image: url("footer.jpg");
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.foot .zhe {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.foot .zhe .wrap {
+  padding-top: 100px;
+  width: 1000px;
+}
+.foot .zhe .wrap .big {
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.289);
+  color: white;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.foot .zhe .wrap .big::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.foot .zhe .wrap .big .left {
+  float: left;
+  width: 25%;
+}
+.foot .zhe .wrap .big .left h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.foot .zhe .wrap .big .left h3 span {
+  font-weight: lighter;
+  color: #a8a3a3;
+}
+.foot .zhe .wrap .big .left p {
+  margin-top: 20px;
+  color: #a8a3a3;
+}
+.foot .zhe .wrap .big .left ul.icon::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.foot .zhe .wrap .big .left ul.icon li {
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.foot .zhe .wrap .big .left ul.icon li a {
+  color: white;
+  transition: all 0.5s;
+}
+.foot .zhe .wrap .big .left ul.icon li a:hover {
+  color: red;
+}
+.foot .zhe .wrap .big .right {
+  float: right;
+  width: 75%;
+  box-sizing: border-box;
+  padding-left: 50px;
+}
+.foot .zhe .wrap .big .right::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.foot .zhe .wrap .big .right .quick {
+  float: left;
+  width: 25%;
+  margin-left: 10px;
+}
+.foot .zhe .wrap .big .right .quick h4 {
+  margin-bottom: 20px;
+}
+.foot .zhe .wrap .big .right .quick p {
+  line-height: 30px;
+}
+.foot .zhe .wrap .big .right .quick p a {
+  color: #a8a3a3;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.foot .zhe .wrap .big .right .quick p a:hover {
+  color: red;
+}
+.foot .zhe .wrap .big .right .contact {
+  float: left;
+  width: 25%;
+  margin-left: 50px;
+}
+.foot .zhe .wrap .big .right .contact h4 {
+  margin-bottom: 20px;
+}
+.foot .zhe .wrap .big .right .contact span.long {
+  line-height: 10px;
+}
+.foot .zhe .wrap .big .right .contact span.long a {
+  color: #a8a3a3;
+  text-decoration: none;
+}
+.foot .zhe .wrap .big .right .contact span {
+  line-height: 35px;
+}
+.foot .zhe .wrap .big .right .contact span a {
+  color: #a8a3a3;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.foot .zhe .wrap .big .right .contact span a:hover {
+  color: red;
+}
+.foot .zhe .wrap .big .right .opening {
+  float: left;
+  width: 30%;
+  margin-left: 50px;
+}
+.foot .zhe .wrap .big .right .opening h4 {
+  margin-bottom: 20px;
+}
+.foot .zhe .wrap .big .right .opening ul {
+  color: #a8a3a3;
+}
+.foot .zhe .wrap .big .right .opening ul li {
+  line-height: 25px;
+}
+.foot .zhe .wrap .big .right .opening ul li span {
+  margin-left: 20px;
+}
+.foot .zhe .wrap .buttom {
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 100px;
+  color: #a8a3a3;
+}
+.foot .zhe .wrap .buttom p a {
+  color: #a8a3a3;
+  transition: all 0.5s;
+}
+.foot .zhe .wrap .buttom p a:hover {
+  color: red;
+}
+/*# sourceMappingURL=./index.css.map */

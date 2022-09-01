@@ -1,0 +1,43 @@
+.gallery {
+  overflow: hidden;
+}
+.gallery ul.left {
+  overflow: hidden;
+  width: 75%;
+  float: left;
+}
+.gallery ul.left li {
+  width: calc(33.33% - 20px);
+  height: 300px;
+  float: left;
+  background-size: cover;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.gallery ul.left li:nth-child(1) {
+  background-image: url(imgs/gallery-1.jpg);
+}
+.gallery ul.left li:nth-child(2) {
+  background-image: url(imgs/gallery-2.jpg);
+}
+.gallery ul.left li:nth-child(3) {
+  background-image: url(imgs/gallery-3.jpg);
+}
+.gallery ul.left li:nth-child(4) {
+  background-image: url(imgs/gallery-5.jpg);
+}
+.gallery ul.left li:nth-child(5) {
+  background-image: url(imgs/gallery-6.jpg);
+}
+.gallery ul.left li:nth-child(6) {
+  background-image: url(imgs/gallery-7.jpg);
+}
+.gallery .right {
+  background-image: url(imgs/gallery-4.jpg);
+  height: 620px;
+  width: 25%;
+  float: right;
+  background-size: cover;
+  background-position: center bottom;
+}
+/*# sourceMappingURL=./gallery.css.map */

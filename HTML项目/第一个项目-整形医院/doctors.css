@@ -1,0 +1,45 @@
+.doctors .wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  height: 600px;
+}
+.doctors .wrapper header.title {
+  text-align: center;
+  padding: 20px 0;
+}
+.doctors .wrapper header.title p {
+  font-size: 18px;
+}
+.doctors .wrapper header.title h3 {
+  font-size: 28px;
+}
+.doctors .wrapper ul.list {
+  overflow: hidden;
+}
+.doctors .wrapper ul.list .card {
+  float: left;
+  margin: 15px;
+  text-align: center;
+  width: 303px;
+}
+.doctors .wrapper ul.list .card img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #b8b6b6;
+  padding: 10px;
+}
+.doctors .wrapper ul.list .card h5 {
+  font-size: 20px;
+  margin-top: 15px;
+}
+.doctors .wrapper ul.list .card p {
+  font-size: 14px;
+  color: lightblue;
+  margin-top: 10px;
+}
+.doctors .wrapper ul.list .card .icons i {
+  color: black;
+  font-size: 18px;
+  margin: 15px 10px;
+}
+/*# sourceMappingURL=./doctors.css.map */
