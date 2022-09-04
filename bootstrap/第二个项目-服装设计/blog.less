@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.blog {
+  //   border-color: aqua;
+  .wrap {
+    width: 1000px;
+    margin: 0 auto;
+    h3 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+      span {
+        font-weight: lighter;
+      }
+    }
+    .show {
+      width: 30%;
+      float: left;
+      margin-left: 20px;
+      box-shadow: 0 0 3px 0 black;
+      border-radius: 10px;
+      overflow: hidden;
+      .wuping {
+        &:hover {
+           .yin{
+            img{
+                transform: scale(1.2);
+            }
+           }
+            .zhezhao {
+              transform: scale(1);
+            }
+          }
+        font-size: 0;
+        width: 100%;
+        // border: 1px solid red;
+        position: relative;
+        .yin{
+            overflow: hidden;
+            img {
+                width: 100%;
+                // vertical-align: bottom;
+                border-radius: 10px;
+                transform: scale(1);
+                transition: all 0.5s;
+                background-position: center;
+                background-size: cover;
+              }
+        }
+        .zhezhao {
+          width: 100%;
+          height: 200px;
+          background-color: rgba(255, 0, 0, 0.514);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 10px;
+          transform: scale(0);
+          transition: all 0.5s;
+          text-align: center;
+          i {
+            font-size: 20px;
+            color: white;
+            margin-top: 80px;
+          }
+        }
+        .chaozuo {
+          padding-top: 20px;
+          &::after {
+            clear: both;
+            display: block;
+            content: "";
+          }
+          //   background-color: aquamarine;
+          .fl {
+            float: left;
+            a {
+              text-decoration: none;
+              font-size: 14px;
+              margin-left: 15px;
+              color: black;
+              i {
+                color: red;
+                margin-right: 5px;
+              }
+            }
+          }
+          .fr {
+            float: right;
+
+            i {
+              font-size: 14px;
+              color: red;
+              margin-right: 5px;
+            }
+            span {
+              font-size: 14px;
+              margin-right: 15px;
+            }
+          }
+          .sb {
+            float: left;
+            margin-top: 30px;
+            margin-left: 20px;
+            h5 {
+              font-size: 18px;
+              margin-bottom: 25px;
+            }
+            p {
+              width: 100%;
+              font-size: 14px;
+              line-height: 25px;
+            }
+            span {
+              font-size: 16px;
+              line-height: 50px;
+              a {
+                text-decoration: none;
+                color: black;
+                border-bottom: 1px solid red;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
