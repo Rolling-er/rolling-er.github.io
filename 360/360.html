@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-slide:nth-child(1) {
+        background-image: url("image/01.jpg");
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        /* position: relative; */
+      }
+      .top {
+        margin: auto;
+        max-width: 1200px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+      .top img {
+        width: 160px;
+        height: 28px;
+        display: block;
+      }
+      .top .nav {
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
+        font-size: 16px;
+        align-items: center;
+        color: rgb(165, 165, 165);
+      }
+      .swiper-slide:nth-child(1) .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 1200px;
+        margin-top: -20px;
+        animation-name: banner;
+        animation-duration: 5s;
+      }
+      @keyframes banner {
+        from {
+          opacity: 0.1;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .swiper-slide:nth-child(1) .contain p:nth-child(1) {
+        font-size: 54px;
+        margin: 0;
+        color: white;
+      }
+      .swiper-slide:nth-child(1) .contain p:nth-child(2) {
+        color: rgb(241, 239, 239);
+      }
+      .swiper-slide:nth-child(1) .contain .load {
+        display: flex;
+        /* justify-content: space-evenly; */
+        align-items: center;
+      }
+      .swiper-slide:nth-child(1) .contain span {
+        margin: 20px 10px;
+      }
+      .swiper-slide:nth-child(1) .contain span:nth-of-type(1) {
+        width: 180px;
+        height: 60px;
+        background-color: lightblue;
+        font-size: 20px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 1px solid white;
+      }
+      .swiper-slide:nth-child(1) .contain span:nth-of-type(2) {
+        width: 180px;
+        height: 60px;
+        background-color: lightblue;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+        background-color: white;
+        position: relative;
+      }
+      .swiper-slide:nth-child(1) .contain span img {
+        width: 20px;
+        height: 20px;
+        display: block;
+        margin-top: -10px;
+      }
+      .swiper-slide:nth-child(1) .contain span:nth-of-type(2) p {
+        font-size: 14px;
+        width: 40px;
+        height: 20px;
+        background-color: red;
+        color: white;
+        position: absolute;
+        top: -25px;
+        right: -10px;
+        line-height: 20px;
+      }
+      .swiper-slide:nth-child(1) img {
+        position: absolute;
+        animation-name: banner;
+        animation-duration: 5s;
+      }
+      .swiper-slide:nth-child(1) > img:nth-of-type(1) {
+        width: 200px;
+        height: 200px;
+        top: 150px;
+        left: 300px;
+      }
+      .swiper-slide:nth-child(1) > img:nth-of-type(2) {
+        width: 110px;
+        height: 110px;
+        bottom: 320px;
+        right: 450px;
+      }
+      .swiper-slide:nth-child(1) > img:nth-of-type(3) {
+        width: 345px;
+        height: 345px;
+        bottom: 20px;
+        right: 200px;
+      }
+
+      @keyframes huanman {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu {
+        /* display: flex; */
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        /* text-align: center; */
+        animation-name: huanman;
+        animation-duration: 5s;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product {
+        color: white;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product h5 {
+        font-size: 60px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product .xian {
+        width: 50px;
+        height: 3px;
+        background-color: gray;
+        position: relative;
+        bottom: 70px;
+        left: 100px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product span {
+        font-size: 36px;
+        position: relative;
+        bottom: 50px;
+        left: 95px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product p {
+        font-size: 20px;
+        position: relative;
+        bottom: 50px;
+        left: 30px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(2) .xinqiu .product .tiyan {
+        width: 200px;
+        height: 48px;
+        border: 2px solid gainsboro;
+        border-radius: 24px;
+        /* text-align: center; */
+        line-height: 48px;
+        font-size: 20px;
+        position: relative;
+        left: 90px;
+        bottom: 20px;
+      }
+
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 {
+        /* display: flex; */
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        /* text-align: center; */
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 {
+        color: white;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 h5 {
+        font-size: 60px;
+        position: relative;
+        left: 50px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 .xian2 {
+        width: 50px;
+        height: 3px;
+        background-color: gray;
+        position: relative;
+        bottom: 70px;
+        left: 100px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 span {
+        font-size: 36px;
+        position: relative;
+        bottom: 50px;
+        left: 95px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 p {
+        font-size: 20px;
+        position: relative;
+        bottom: 50px;
+        left: 70px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(3) .xinqiu2 .product2 .tiyan {
+        width: 200px;
+        height: 48px;
+        border: 2px solid gainsboro;
+        border-radius: 24px;
+        /* text-align: center; */
+        line-height: 48px;
+        font-size: 20px;
+        position: relative;
+        left: 95px;
+        bottom: 20px;
+      }
+
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 {
+        /* display: flex; */
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        /* text-align: center; */
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 {
+        color: white;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 h5 {
+        font-size: 60px;
+        position: relative;
+        left: 50px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 .xian3 {
+        width: 50px;
+        height: 3px;
+        background-color: gray;
+        position: relative;
+        bottom: 70px;
+        left: 100px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 span {
+        font-size: 36px;
+        position: relative;
+        bottom: 50px;
+        left: 95px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 p {
+        font-size: 20px;
+        position: relative;
+        bottom: 50px;
+        left: 70px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(4) .xinqiu3 .product3 .tiyan {
+        width: 200px;
+        height: 48px;
+        border: 2px solid gainsboro;
+        border-radius: 24px;
+        /* text-align: center; */
+        line-height: 48px;
+        font-size: 20px;
+        position: relative;
+        left: 95px;
+        bottom: 20px;
+      }
+
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 {
+        /* display: flex; */
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        /* text-align: center; */
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 {
+        color: white;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 h5 {
+        font-size: 60px;
+        position: relative;
+        left: 50px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 .xian4 {
+        width: 50px;
+        height: 3px;
+        background-color: gray;
+        position: relative;
+        bottom: 70px;
+        left: 100px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 span {
+        font-size: 36px;
+        position: relative;
+        bottom: 50px;
+        left: 90px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 p {
+        font-size: 20px;
+        position: relative;
+        bottom: 50px;
+        left: 102px;
+      }
+      .swiper-wrapper > .swiper-slide:nth-of-type(5) .xinqiu4 .product4 .tiyan {
+        width: 200px;
+        height: 48px;
+        border: 2px solid gainsboro;
+        border-radius: 24px;
+        /* text-align: center; */
+        line-height: 48px;
+        font-size: 20px;
+        position: relative;
+        left: 95px;
+        bottom: 20px;
+      }
+      footer {
+        width: 100vw;
+        height: 130px;
+        /* background-color: lightblue; */
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        left: 0;
+      }
+      footer div {
+        width: 100%;
+        height: 130px;
+        background-color: rgb(45, 45, 45);
+        margin: 0 auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      footer div p {
+        text-align: center;
+        /* line-height: 20px; */
+        color: gray;
+        font-size: 16px;
+        line-height: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="top">
+      <div>
+        <img src="./image/极速浏览器.png" alt="" />
+      </div>
+      <div class="nav">
+        <span>论坛</span>
+        <span>扩展</span>
+        <span>Mac版</span>
+      </div>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="contain">
+            <p>畅快浏览 积极体验</p>
+            <p>全新Chrome内核浏览器，性能更强，速度更快</p>
+            <div class="load">
+              <span>32位版本</span>
+              <span
+                ><div><img src="./image/win.png" alt="" /></div>
+                64位版本
+                <p>NEW</p></span
+              >
+            </div>
+          </div>
+          <img src="./image/星球min.png" alt="" />
+          <img src="./image/宇宙.png" alt="" />
+          <img src="./image/星球1.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <div class="xinqiu">
+            <div class="product">
+              <h5>极速</h5>
+              <div class="xian"></div>
+              <span>全新Chromium内核</span>
+              <p>性能强劲，快如闪电</p>
+              <div class="tiyan">立即体验</div>
+            </div>
+          </div>
+          <video src="./vidio/星球.mp4" autoplay loop muted></video>
+        </div>
+        <div class="swiper-slide">
+          <div class="xinqiu2">
+            <div class="product2">
+              <h5>极酷</h5>
+              <div class="xian2"></div>
+              <span>暗夜炫黑模式</span>
+              <p>定义酷，定义你。</p>
+              <div class="tiyan">立即体验</div>
+            </div>
+          </div>
+          <video src="./vidio/极光.mp4" autoplay loop muted></video>
+        </div>
+        <div class="swiper-slide">
+          <div class="xinqiu3">
+            <div class="product3">
+              <h5>极安全</h5>
+              <div class="xian3"></div>
+              <span>DNS加密防劫持</span>
+              <p>安全升级，肆意无忌。</p>
+              <div class="tiyan">立即体验</div>
+            </div>
+          </div>
+          <video src="./vidio/圣光.mp4" autoplay loop muted></video>
+        </div>
+        <div class="swiper-slide">
+          <div class="xinqiu4">
+            <div class="product4">
+              <h5>极视界</h5>
+              <div class="xian4"></div>
+              <span>4K高清视频播放</span>
+              <p>还原真实之美，尽显万物本色。</p>
+              <div class="tiyan">立即体验</div>
+            </div>
+          </div>
+          <video src="./vidio/电脑.mp4" autoplay loop muted></video>
+          <footer>
+            <div>
+              <p>
+                Copyright © 2005-2022 360.CN All Rights Reserved
+                360互联网安全中心 隐私政策京ICP证080047号[京ICP备08010314号-6]
+              </p>
+              <p>
+                网站举报电话：4006693600 举报邮箱：kefu@360.cn
+                互联网违法和不良信息举报中心：https://www.12377.cn
+              </p>
+              <p>京公网安备 11000002000006号</p>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="../swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+
+        // 滚动过渡时间
+        speed: 1000,
+        mousewheel: {
+          thresholdTime: 1000,
+        },
+
+        slidesPerView: 1,
+        spaceBetween: 30,
+        // mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        on: {
+          init: function (swiper) {
+            //Swiper初始化了
+            console.log("当前的slide序号是" + this.activeIndex); //或者swiper.activeIndex，swiper与this都可指代当前swiper实例
+            this.emit("transitionEnd"); //在初始化时触发一次transitionEnd事件，需要先设置transitionEnd
+          },
+        },
+      });
+      var index = 1;
+
+      window.onscroll = function () {
+        for (let i = 0; i < this.activeIndex.length; i++) {
+          if (index == i) {
+          }
+        }
+        // console.log(this.activeIndex[i]);
+        console.log("当前的slide序号是" + this.activeIndex);
+      };
+      // console.log(swiper);
+    </script>
+
+    <!-- <script>
+      var swiper = document
+        .querySelector(".swiper-wrapper")
+        .querySelectorAll(".swiper-slide");
+      var index = 1;
+      window.onscroll = function () {
+        // for (let i = 0; i < swiper.length; i++) {
+        //   if (i == index) {
+        //     console.log(swiper.event);
+        //   }
+        // }
+        console.log(window.scrollY);
+      };
+    </script> -->
+  </body>
+</html>
