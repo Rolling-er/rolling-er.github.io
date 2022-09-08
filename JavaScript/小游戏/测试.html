@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .zhuhe {
+            width: 400px;
+            height: 50px;
+            background-color: aliceblue;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0px black;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .choujiang {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .choujiang>div {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        div.star {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zhuhe"></div>
+    <div class="choujiang">
+        <div class="one">手机</div>
+        <div class="two">平板</div>
+        <div class="three">电磁炉</div>
+        <div class="eight">电视</div>
+        <div class="star">开始</div>
+        <div class="four">洗衣机</div>
+        <div class="seven">电脑</div>
+        <div class="six">冰箱</div>
+        <div class="five">衣柜</div>
+    </div>
+    </div>
+
+    <script>
+        var zhuhe = document.querySelector(".zhuhe");
+        var choujiang = document.querySelectorAll(".choujiang div");
+        var star = document.querySelector(".star");
+        var arr = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+        var is = true;
+        var d1;
+
+        function first(n) {
+            arr.forEach(function(index, ii) {
+                d1 = setTimeout(function() {
+                        arr.forEach(function(i) {
+                            if (is) {
+                                if (i == index) {
+                                    document.querySelector('.' + i).style.backgroundColor = "grey";
+                                    // console.log(i);
+                                    document.querySelector('.' + i).classList.add('light');
+                                } else {
+                                    document.querySelector('.' + i).style.backgroundColor = "lightblue";
+                                    document.querySelector('.' + i).classList.remove('light');
+                                }
+                            }
+
+                        })
+                    }, 1000 / n + ii * 1000 / n)
+                    // console.log(index);
+            });
+        }
+
+
+        var d2;
+
+        function second(n) {
+            d2 = setInterval(function() {
+                // arr.forEach(function(index, ii) {
+                //     setTimeout(function() {
+                //         arr.forEach(function(i) {
+                //             if (i == index) {
+                //                 document.querySelector('.' + i).style.backgroundColor = "grey";
+                //                 // console.log(i);
+                //             } else {
+                //                 document.querySelector('.' + i).style.backgroundColor = "lightblue";
+                //             }
+                //         })
+                //     }, 1000 + ii * 1000)
+                // });
+                first(n);
+            }, 8000 / n);
+            return d2;
+        }
+
+        var time = 0;
+        var n = 1;
+        star.onclick = function() {
+            is = true
+            first(20);
+            second(20);
+            n = Math.random() * 6500;
+            setTimeout(function() {
+                    is = false;
+                    clearInterval(d1);
+                    clearInterval(d2);
+                    zhuhe.innerHTML = "<h3>恭喜你抽到了" + document.querySelector('.light').innerHTML + "</h3>";
+                }, n)
+                // if (++time > 0) {
+                //     clearInterval(d1);
+                //     clearInterval(d2);
+                // }
+        }
+    </script>
+</body>
+
+</htm

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: lightblue;
+      }
+      .music {
+      }
+      .bg {
+        width: 300px;
+        height: 400px;
+        background-color: aliceblue;
+        margin: 0 auto;
+        border-radius: 25px;
+        box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.474);
+        position: relative;
+        margin-top: 50px;
+      }
+      .bg .img img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 30px;
+        left: -30px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 0px black;
+      }
+      .bg .icon {
+        width: 100px;
+        height: 250px;
+        /* background-color: aquamarine; */
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: gray;
+      }
+      .bg .icon .playing {
+        font-size: 6rem;
+        color: white;
+      }
+      .bg .icon .playdown {
+        font-size: 6rem;
+        color: white;
+        display: none;
+      }
+      .bg .icon .share:hover {
+        color: blue;
+      }
+      .bg .icon .like:hover {
+        color: blue;
+      }
+      .bg .icon .prev:hover {
+        color: blue;
+      }
+      .bg .icon .next:hover {
+        color: blue;
+      }
+      .bg .icon .playing:hover {
+        animation-name: big;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      .bg .icon .playdown:hover {
+        animation-name: big;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes big {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+      .last {
+        width: 300px;
+        height: 140px;
+        /* background-color: palevioletred; */
+        position: absolute;
+        bottom: 0;
+      }
+      .last span {
+        margin-left: 20px;
+        font-weight: bold;
+      }
+      .last p {
+        margin-left: 20px;
+        margin-top: 10px;
+        color: rgb(108, 106, 106);
+      }
+      .last .time {
+        margin-left: 230px;
+        color: rgb(146, 146, 146);
+      }
+      .last input {
+        margin-top: 5px;
+        width: 85%;
+        margin-left: 20px;
+      }
+      .last .musictime {
+        line-height: 0px;
+        color: rgb(141, 141, 141);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="music">
+      <div class="bg">
+        <div class="img">
+          <img src="./img/1.jpg" alt="" />
+        </div>
+        <div class="icon">
+          <i class="fa fa-heart like"></i>
+          <i class="fa fa-external-link share"></i>
+          <i class="fa fa-backward prev"></i>
+          <i class="fa fa-forward next"></i>
+          <i class="fa fa-play-circle-o playing"></i>
+          <i class="fa fa-pause-circle playdown"></i>
+        </div>
+        <div class="last">
+          <span>Moby</span>
+          <p>Extreme Ways</p>
+          <span class="time">03:36</span>
+          <input type="range" />
+          <p class="musictime">00:00</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var img = document.querySelector(".img");
+      var imgs = document.querySelectorAll("img");
+      var playing = document.querySelector(".icon").querySelector(".playing");
+      var playdown = document.querySelector(".icon").querySelector(".playdown");
+      var audio = document.createElement("audio");
+      var next = document.querySelector(".icon").querySelector(".next");
+      var prev = document.querySelector(".icon").querySelector(".prev");
+
+      var music = [
+        "http://dl.stream.qqmusic.qq.com/C400003TKFV302R5NL.m4a?guid=7206991211&vkey=E57BB7C215EE431AB07B4D8155D621E028CF04D28AF6EE9E0E352E39DA89372A5936C95FF7FE3A693A27C4474397368665C3B248B326F537&uin=&fromtag=120032",
+        "http://dl.stream.qqmusic.qq.com/C4000022U64e09G3CR.m4a?guid=5332092822&vkey=2310A8A47E22B7108466B1E2A043AC104DB86BC4D6DC10EE46960A676ABD2DA1B4E325513265FF8CD44C184CAC4E28D39DBB8BE93E7A46FB&uin=&fromtag=120032",
+        "http://dl.stream.qqmusic.qq.com/C400000n57Y03eNvvF.m4a?guid=7124491403&vkey=35B9918AC3A4EBE1554AFC7B689519DFF16F17BB9A2FDB34D861416644BDFD6AEB4E552D2E049C3B6E63F01F52A98E7A678CA347880C3B35&uin=&fromtag=120032",
+        "http://dl.stream.qqmusic.qq.com/C400004bund33tAla2.m4a?guid=1294139107&vkey=616AD8B7F78E8BCF239CA71F4D4014462E3D8BE8C5EF26C715E1A06BEAAB8B22BACF695D5EB244D15E1AF91377368E66B8878B3E56B64BE9&uin=&fromtag=120032",
+        "http://dl.stream.qqmusic.qq.com/C400000CgkLl3UNJQ3.m4a?guid=6064884864&vkey=D209AEE0785FF5363EEC47F9062DB8DC6ACAC277A16D59788E3C7B8505FD88E0DD212929242DF257255DA4932FABF456CF38C3C5DF7F0070&uin=&fromtag=120032",
+      ];
+      var i = 0;
+      audio.src = music[i];
+      // function nextMusic() {
+      //   for (let i = 0; i < music.length; i++) {
+      //     if (this.music == i) {
+      //       // nextMusic = this.music;
+      //       console.log(this.music);
+      //     }
+      //   }
+      // }
+
+      playing.onclick = function () {
+        // console.log(video);
+        audio.className = "active";
+        // audio.autoplay = "autoplay";
+        playing.append(audio);
+        audio.play();
+        // console.log(audio);
+        playing.style.display = "none";
+        playdown.style.display = "block";
+      };
+
+      playdown.onclick = function () {
+        audio.className = "active";
+        audio.pause();
+        playing.style.display = "block";
+        playdown.style.display = "none";
+        // console.log(audio);
+      };
+
+      next.onclick = function () {
+        i = ++i == music.length ? 0 : i;
+        console.log(i);
+        audio.src = music[i];
+        audio.play();
+        // console.log(audio);
+        playing.style.display = "none";
+        playdown.style.display = "block";
+      };
+
+      prev.onclick = function () {
+        i = --i == -1 ? music.length - 1 : i;
+        console.log(i);
+        audio.src = music[i];
+        audio.play();
+        // console.log(audio);
+        playing.style.display = "none";
+        playdown.style.display = "block";
+      };
+    </script>
+  </body>
+</html>

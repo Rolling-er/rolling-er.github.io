@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .big {
+        width: 100%;
+        height: 300px;
+      }
+
+      .big .stage {
+        width: 673px;
+        height: 106px;
+        background-color: lightblue;
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        align-content: space-between;
+        margin: 50px auto;
+      }
+
+      .big .stage span {
+        /* background-color: aqua; */
+        width: 100%;
+        height: 21px;
+        /* position: relative; */
+        /* top: 21px; */
+        /* left: 0; */
+        /* display: block; */
+      }
+
+      .big .stage div {
+        width: 69px;
+        height: 69px;
+        background-size: auto 100%;
+        background-position: right;
+        transition: all 0.3s;
+        margin-right: 5px;
+      }
+
+      .big .stage div img {
+        width: 69px;
+        height: 69px;
+      }
+
+      .big .stage div img.active {
+        display: none;
+      }
+
+      .big .stage div:nth-of-type(1) {
+        background-image: url("./wzryimg/126-freehover.png");
+        width: 224px;
+      }
+
+      .big .stage div:nth-of-type(2) {
+        background-image: url("./wzryimg/127-freehover.png");
+      }
+
+      .big .stage div:nth-of-type(3) {
+        background-image: url("./wzryimg/131-freehover.png");
+      }
+
+      .big .stage div:nth-of-type(4) {
+        background-image: url("./wzryimg/173-freehover.png");
+      }
+
+      .big .stage div:nth-of-type(5) {
+        background-image: url("./wzryimg/507-freehover.png");
+      }
+
+      .big .stage div:nth-of-type(6) {
+        background-image: url("./wzryimg/525-freehover.png");
+      }
+
+      .big .stage div:nth-of-type(7) {
+        background-image: url("./wzryimg/531-freehover.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big">
+      <div class="stage">
+        <span>周免英雄（8月15日-8月21日）</span>
+        <div><img src="./wzryimg/126.webp" class="active" /></div>
+        <div><img src="./wzryimg/127.webp" class="" /></div>
+        <div><img src="./wzryimg/131.webp" class="" /></div>
+        <div><img src="./wzryimg/173.webp" class="" /></div>
+        <div><img src="./wzryimg/507.webp" class="" /></div>
+        <div><img src="./wzryimg/525.webp" class="" /></div>
+        <div><img src="./wzryimg/531.webp" class="" /></div>
+      </div>
+    </div>
+
+    <script>
+      var imgs = document.querySelectorAll(".big .stage div");
+      var bigEl = document.querySelector(".big");
+      var dis = document.querySelectorAll(".big .stage img");
+
+      imgs.forEach(function (img, i) {
+        img.onmouseover = function () {
+          imgs.forEach(function (el, index) {
+            if (index === i) {
+              el.style.width = "224px";
+              dis[index].style.opacity = 0;
+            } else {
+              dis[index].style.opacity = 1;
+              el.style.width = "69px";
+            }
+          });
+        };
+      });
+
+        // $(".stage div").mouseover(function () {
+        //   $(".stage div")
+        //     .css("width", "69px")
+        //     .eq($(this).index() - 1)
+        //     .css("width", "224px").find('img').css('display','none').end().siblings().find('img').css('display', 'block')
+        // });
+    </script>
+  </body>
+</html>

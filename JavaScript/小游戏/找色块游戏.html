@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <ul class="stage"></ul>
+
+    <style>
+        * {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .stage {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            /* background-color: lightblue; */
+        }
+        
+        .stage li {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        var level = 1;
+        // 第几关
+        var h1 = document.querySelector("h1");
+
+        var stage = document.querySelector(".stage");
+
+        function showDot(level) {
+            stage.innerHTML = "";
+            // zh这一句不加的话，第二关会和第一关插到一起
+            h1.innerText = "现在是第" + level + "关";
+            var color = "#" + Math.random().toString(16).slice(-6);
+
+            // var color = "#" + Math.random().toString(16);
+            // #0.a2b06b17a062b
+
+            // var color = "#" + Math.random().slice(-6);
+            //Math.random(...).slice is not a function
+
+            console.log(color, "color");
+
+            for (let i = 0; i < Math.pow(level + 2, 2); i++) {
+                // pow 取平方
+                var node = document.createElement("li");
+                // 创建一个元素li
+                node.style.backgroundColor = color;
+                // 给li设置属性 color对应 var color = "#" + Math.random().toString(16).slice(-6);
+                node.style.width = 500 / (level + 2) + "px";
+                //设置li的宽度 为500 / (等级+2)
+                stage.appendChild(node);
+            }
+
+            // 随机找一个dot元素 添加事件/改变透明
+            // stage.querySelectorAll("li")
+
+            var index = Math.floor(Math.random() * stage.querySelectorAll("li").length);
+            // Math.random 洗牌函数  floor向下取整 0.5 =0 ,1.5=1
+            stage.querySelectorAll("li")[index].style.opacity = "0.6";
+
+            stage.querySelectorAll("li")[index].onclick = function() {
+                level++;
+                showDot(level);
+            };
+        }
+        showDot(level);
+    </script>
+</body>
+
+</html>

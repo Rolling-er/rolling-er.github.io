@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .big {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 120px;
+        height: 50px;
+        background-color: rgb(198, 197, 197);
+        margin: 0 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        position: relative;
+        /* top: 0; */
+        /* left: 0; */
+        /* right: 0; */
+        /* bottom: 0; */
+      }
+      .grow:hover {
+        animation-name: grow;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes grow {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      .shrink:hover {
+        animation-name: shrink;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes shrink {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0.8);
+        }
+      }
+
+      .pulse:hover {
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(0.8);
+        }
+      }
+
+      .pulsegrow:hover {
+        animation-name: pulsegrow;
+        animation-duration: 0.3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes pulsegrow {
+        0% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .pulseshrink:hover {
+        animation-name: pulseshrink;
+        animation-duration: 0.3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes pulseshrink {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .push:hover {
+        animation-name: push;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes push {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .pop:hover {
+        animation-name: pop;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes pop {
+        from {
+          transform: scale(1.2);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .bouncein:hover {
+        animation-name: bouncein;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes bouncein {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1.3);
+        }
+      }
+
+      .bounceout:hover {
+        animation-name: bounceout;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes bounceout {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(0.8);
+        }
+      }
+
+      .rotate:hover {
+        animation-name: rotate;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(15deg);
+        }
+      }
+
+      .growrotate:hover {
+        animation-name: growrotate;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes growrotate {
+        from {
+          transform: rotate(0deg) scale(1);
+        }
+        to {
+          transform: rotate(15deg) scale(1.2);
+        }
+      }
+
+      .float:hover {
+        animation-name: float;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes float {
+        from {
+          top: 0;
+        }
+        to {
+          top: -10px;
+        }
+      }
+
+      .sink:hover {
+        animation-name: sink;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes sink {
+        from {
+          top: 0;
+        }
+        to {
+          top: 10px;
+        }
+      }
+
+      .bob:hover {
+        animation-name: bob;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes bob {
+        from {
+          top: 0;
+        }
+        to {
+          top: -10px;
+        }
+      }
+
+      .hang:hover {
+        animation-name: hang;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes hang {
+        from {
+          top: 0;
+        }
+        to {
+          top: 10px;
+        }
+      }
+
+      .skew:hover {
+        animation-name: skew;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes skew {
+        from {
+          transform: skew(0deg);
+        }
+        to {
+          transform: skew(-15deg);
+        }
+      }
+
+      .skewforward:hover {
+        animation-name: skewforward;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes skewforward {
+        from {
+          transform: skew(0deg);
+        }
+        to {
+          transform: skew(-15deg);
+          transform-origin: left bottom;
+        }
+      }
+
+      .skewbackward:hover {
+        animation-name: skewbackward;
+        animation-duration: 0.7s;
+        /* animation-iteration-count: infinite; */
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes skewbackward {
+        from {
+          transform: skew(0deg);
+        }
+        to {
+          transform: skew(15deg);
+          transform-origin: left bottom;
+        }
+      }
+
+      .wobblehorizontal:hover {
+        animation-name: wobblehorizontal;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: inherit;
+        /* animation-direction: alternate; */
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobblehorizontal {
+        0% {
+          left: 10px;
+        }
+        25% {
+          left: -10px;
+        }
+        50% {
+          left: 5px;
+        }
+        75% {
+          left: -5px;
+        }
+        100% {
+          left: 0px;
+        }
+      }
+
+      .wobblevertical:hover {
+        animation-name: wobblevertical;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        /* animation-direction: alternate; */
+        animation-timing-function: inherit;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobblevertical {
+        0% {
+          top: 10px;
+        }
+        25% {
+          top: -10px;
+        }
+        50% {
+          top: 5px;
+        }
+        75% {
+          top: -5px;
+        }
+        100% {
+          top: 0;
+        }
+      }
+
+      .wobblebotr:hover {
+        animation-name: wobblebotr;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: inherit;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobblebotr {
+        0% {
+          transform: translate(-10px, -10px);
+        }
+        100% {
+          transform: translate(10px, 10px);
+        }
+      }
+
+      .wobbletopr:hover {
+        animation-name: wobbletopr;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: inherit;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobbletopr {
+        0% {
+          transform: translate(-10px, 10px);
+        }
+        100% {
+          transform: translate(10px, -10px);
+        }
+      }
+
+      .wobbletop:hover {
+        animation-name: wobbletop;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobbletop {
+        0% {
+          transform: skew(15deg);
+          transform-origin: left bottom;
+        }
+        100% {
+          transform: skew(-15deg);
+          transform-origin: left bottom;
+        }
+      }
+
+      .wobblebop:hover {
+        animation-name: wobblebop;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobblebop {
+        0% {
+          transform: skew(15deg);
+          transform-origin: left top;
+        }
+        100% {
+          transform: skew(-15deg);
+          transform-origin: left top;
+        }
+      }
+
+      .wobbleskew:hover {
+        animation-name: wobbleskew;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes wobbleskew {
+        0% {
+          transform: skew(15deg);
+        }
+        100% {
+          transform: skew(-15deg);
+        }
+      }
+
+      .buzz:hover {
+        animation-name: buzz;
+        animation-duration: 0.1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes buzz {
+        0% {
+          /* transform: skew(5deg); */
+          transform: rotate(5deg);
+          /* transform: skew(5deg) translateX(5px); */
+          transform-origin: bottom;
+        }
+        100% {
+          /* transform: scale(-5deg) translateX(5px); */
+          /* transform: scale(-5deg); */
+          transform: rotate(-5deg);
+          transform-origin: bottom;
+        }
+      }
+
+      .buzzout:hover {
+        animation-name: buzzout;
+        animation-duration: 0.1s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+        /* animation-fill-mode: forwards; */
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes buzzout {
+        0% {
+          /* transform: skew(5deg); */
+          transform: rotate(5deg);
+          /* transform: skew(5deg) translateX(5px); */
+          transform-origin: bottom;
+        }
+        50% {
+          /* transform: scale(-5deg) translateX(5px); */
+          /* transform: scale(-5deg); */
+          transform: rotate(-5deg);
+          transform-origin: bottom;
+        }
+        100% {
+          /* transform: scale(-5deg) translateX(5px); */
+          /* transform: scale(-5deg); */
+          transform: rotate(0deg);
+          transform-origin: bottom;
+        }
+      }
+
+      .forward:hover {
+        animation-name: forward;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        /* animation-direction: alternate; */
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes forward {
+        0% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(10px);
+        }
+      }
+
+      .backward:hover {
+        animation-name: backward;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        /* animation-direction: alternate; */
+        animation-fill-mode: forwards;
+        /* animation-timing-function: steps(2, start); */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes backward {
+        0% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big">
+      <div class="box grow">Grow</div>
+      <div class="box shrink">Shrink</div>
+      <div class="box pulse">Pulse</div>
+      <div class="box pulsegrow">Pulse Grow</div>
+      <div class="box pulseshrink">Pulse Shrink</div>
+      <div class="box push">Push</div>
+      <div class="box pop">Pop</div>
+      <div class="box bouncein">Bounce In</div>
+      <div class="box bounceout">Bounce Out</div>
+      <div class="box rotate">Rotate</div>
+      <div class="box growrotate">Grow Rotate</div>
+      <div class="box float">Float</div>
+      <div class="box sink">Sink</div>
+      <div class="box bob">Bob</div>
+      <div class="box hang">Hang</div>
+      <div class="box skew">Skew</div>
+      <div class="box skewforward">Skew Forward</div>
+      <div class="box skewbackward">Skew Backward</div>
+      <div class="box wobblehorizontal">Wobble Horizontal</div>
+      <div class="box wobblevertical">Wobble Vertical</div>
+      <div class="box wobblebotr">Wobble BotR</div>
+      <div class="box wobbletopr">Wobble TopR</div>
+      <div class="box wobbletop">Wobble Top</div>
+      <div class="box wobblebop">Wobble Bot</div>
+      <div class="box wobbleskew">Wobble Skew</div>
+      <div class="box buzz">Buzz</div>
+      <div class="box buzzout">Buzz Out</div>
+      <div class="box forward">Forward</div>
+      <div class="box backward">Backward</div>
+    </div>
+  </body>
+</html>

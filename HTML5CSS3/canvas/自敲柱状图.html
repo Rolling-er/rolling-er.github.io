@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="700"></canvas>
+    <script>
+      var canvas = document.getElementById("canvas");
+
+      var context = canvas.getContext("2d");
+
+      context.font = "20px 微软雅黑";
+      context.fillText("canvas绘制柱形图", 100, 20);
+
+      //绘制横纵坐标
+      context.moveTo(100, 100);
+      context.lineTo(100, 500);
+      context.lineTo(750, 500);
+      context.stroke();
+      //绘制水平线
+      context.strokeStyle = "gray";
+      context.moveTo(100, 500);
+      context.lineTo(750, 500);
+      context.fillText("0", 60, 500);
+
+      context.moveTo(100, 450);
+      context.lineTo(750, 450);
+      context.fillText("50", 50, 450);
+
+      context.moveTo(100, 400);
+      context.lineTo(750, 400);
+      context.fillText("100", 50, 400);
+
+      context.moveTo(100, 350);
+      context.lineTo(750, 350);
+      context.fillText("150", 50, 350);
+
+      context.moveTo(100, 300);
+      context.lineTo(750, 300);
+      context.fillText("200", 50, 300);
+
+      context.moveTo(100, 250);
+      context.lineTo(750, 250);
+      context.fillText("250", 50, 250);
+
+      context.moveTo(100, 200);
+      context.lineTo(750, 200);
+      context.fillText("300", 50, 200);
+
+      context.moveTo(100, 150);
+      context.lineTo(750, 150);
+      context.fillText("350", 50, 150);
+
+      context.moveTo(100, 100);
+      context.lineTo(750, 100);
+      context.fillText("400", 50, 100);
+
+      context.stroke();
+
+      //   指向商品的纵向线
+      context.moveTo(175, 510);
+      context.lineTo(175, 500);
+
+      context.moveTo(275, 510);
+      context.lineTo(275, 500);
+
+      context.moveTo(375, 510);
+      context.lineTo(375, 500);
+
+      context.moveTo(475, 510);
+      context.lineTo(475, 500);
+
+      context.moveTo(575, 510);
+      context.lineTo(575, 500);
+
+      context.moveTo(675, 510);
+      context.lineTo(675, 500);
+      //底部文字
+      context.fillText("食品", 150, 530);
+      context.fillText("数码", 250, 530);
+      context.fillText("服饰", 350, 530);
+      context.fillText("配饰", 450, 530);
+      context.fillText("电脑", 550, 530);
+      context.fillText("其他", 650, 530);
+      context.stroke();
+
+      // 顶部文字
+      context.fillText("50", 155, 440);
+      context.fillText("380", 255, 110);
+      context.fillText("100", 355, 390);
+      context.fillText("150", 455, 340);
+      context.fillText("350", 555, 140);
+      context.fillText("250", 655, 240);
+
+      //   context.fillStyle = "red";
+      //   context.fillRect(50, 480, 50, 20);
+      // fillRect(x, y, w, h);
+      var arr = [
+        { c: "blue", x: 150, y: 450, w: 50, h: 50 },
+        { c: "red", x: 250, y: 120, w: 50, h: 380 },
+        { c: "yellow", x: 350, y: 400, w: 50, h: 100 },
+        { c: "green", x: 450, y: 350, w: 50, h: 150 },
+        { c: "purple", x: 550, y: 150, w: 50, h: 350 },
+        { c: "gray", x: 650, y: 250, w: 50, h: 250 },
+      ];
+      arr.forEach(function () {
+        for (var i = 0; i < arr.length; i++) {
+          context.fillStyle = arr[i].c;
+          context.fillRect(arr[i].x, arr[i].y, arr[i].w, arr[i].h);
+        }
+      });
+    </script>
+  </body>
+</html>

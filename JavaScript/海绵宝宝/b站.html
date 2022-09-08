@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 260px;
+        height: 142px;
+        background-color: black;
+        border-radius: 10px;
+        margin: 10px auto;
+        background-image: url("./486142478_dc4dcb-0001.jpg");
+        /* 第1行的第1张图片(第1张)    calc(-265px * 0) calc(-150px * 0)*/
+        /* 第h行的第index张图片    calc(-265px * index-1),calc(-150px * h-1)*/
+        /* 第5行的第10张图片（第50张）    calc(-265px * 9),calc(-150px * 4)   49  50 */
+        /* 1% 50% */
+        background-position: calc(0) calc(0);
+        background-size: 2650px;
+        position: relative;
+        overflow: hidden;
+      }
+      .box > .warp {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.437);
+        position: absolute;
+        top: 0;
+        display: none;
+      }
+
+      .box > .warp > .time {
+        color: #fff;
+        position: absolute;
+        bottom: 0px;
+        left: 5px;
+      }
+
+      .box > .warp > .jindu {
+        width: 95%;
+        height: 4px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .box > .warp > .jindu > .white {
+        height: 100%;
+        background-color: #fff;
+        width: 0%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+      .box > .warp > .jindu > .gray {
+        height: 100%;
+        background-color: gray;
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+
+      .box > .warp > .danmu {
+        width: 100%;
+        height: 75%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .box > .warp > .danmu > .content {
+        color: #fff;
+        font-size: 5px;
+        position: absolute;
+        right: 0px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="box">
+        <div class="warp">
+          <div class="jindu">
+            <div class="white"></div>
+            <div class="gray"></div>
+          </div>
+          <div class="danmu"></div>
+          <span class="time">20:38</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      var dm = [
+        "章鱼哥还是没有胜过强风暴雨(doge)",
+        "日本裁判",
+        "日本裁判",
+        "海绵宝宝笑死我了",
+        "黑人小哥",
+        "堡垒之夜",
+        "最喜欢的一集",
+        "最喜欢的一集",
+        "喜欢",
+        "我怎么觉得派大星这个配音我在神奇宝贝里听过",
+        "我看见你了",
+        "但凡章鱼哥早点回去都不至于这样",
+        "这……这我还真有可能“模仿”",
+        "为什么非要执着于台配或者央配呢",
+        "派总依旧稳定输出",
+        "包租公～",
+        "为什么台配的海绵宝宝跟低能儿似的",
+        "井字游戏，其实可以先手必胜的",
+        "我小时候就看的台配",
+        "终于找到了",
+      ];
+
+      let box = document.querySelector(".box");
+      let warp = document.querySelector(".warp");
+      let white = document.querySelector(".white");
+      let danmu = document.querySelector(".danmu");
+      let inter01;
+
+      // 鼠标移入显示遮罩层
+      box.onmousemove = function (e) {
+        warp.style.display = "block";
+        // 进度条的值
+        let jinduValue =
+          (e.offsetX / parseFloat(getComputedStyle(box).width)) * 100 + "%";
+        white.style.width = jinduValue;
+
+        let zuobiao =
+          parseInt(jinduValue) > 10
+            ? parseInt(jinduValue) - 1 + ""
+            : "0" + parseInt(jinduValue);
+        let oneValue = parseInt(zuobiao[1]);
+        let twoValue = parseInt(zuobiao[0]);
+
+        box.style.backgroundPosition =
+          -265 * oneValue + "px " + -150 * twoValue + "px";
+      };
+
+      let index = 0;
+
+      // 初始化
+      let initSpan = document.createElement("span");
+      initSpan.classList.add("content");
+      initSpan.innerText = dm[0];
+      danmu.appendChild(initSpan);
+
+      box.onmouseenter = function () {
+        inter01 = setInterval(() => {
+          let contents = document.querySelectorAll(".danmu > .content");
+          contents.forEach((v, i) => {
+            let nowRight = parseFloat(getComputedStyle(v).right);
+            v.style.right = nowRight + v.innerText.length * 0.1 + "px";
+
+            if (parseFloat(v.style.right) > 260) {
+              danmu.removeChild(v);
+            }
+
+            // 如果最后一个弹幕的right大于0，则添加新的弹幕
+            if (parseFloat(contents[contents.length - 1].style.right) > 0) {
+              let span = document.createElement("span");
+              span.classList.add("content");
+              if (index > dm.length - 1) {
+                index = 0;
+              }
+              span.innerText = dm[index];
+              ++index;
+              danmu.appendChild(span);
+              span.style.right = -100 + "px";
+              if (index % 2 == 0) {
+                span.style.top = "15px";
+              } else {
+                span.style.top = "0";
+              }
+            }
+          });
+        }, 1000 / 60);
+      };
+
+      // 鼠标移出隐藏遮罩层
+      box.onmouseleave = function () {
+        warp.style.display = "none";
+        // 进度条的值
+        let jinduValue = 0 + "%";
+        box.style.backgroundPosition = -265 * 0 + "px " + -150 * 0 + "px";
+        clearInterval(inter01);
+      };
+    </script>
+  </body>
+</html>

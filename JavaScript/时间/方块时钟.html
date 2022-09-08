@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="big hh">
+            <div class="num h1"></div>
+            <div class="num h2"></div>
+        </div>
+        <div class="big mm">
+            <div class="num m1"></div>
+            <div class="num m2"></div>
+        </div>
+        <div class="big ss">
+            <div class="num s1"></div>
+            <div class="num s2"></div>
+        </div>
+    </div>
+    <style>
+        .box {
+            width: 1000px;
+            display: flex;
+        }
+
+        .big {
+            width: 320px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .num {
+            display: flex;
+            flex-wrap: wrap;
+            width: 150px;
+            margin: 0 5px;
+        }
+
+        .num i {
+            width: 50px;
+            height: 50px;
+            outline: 1px solid red;
+            /* 轮廓，不会改变盒子大小 */
+        }
+
+        .notActive {
+            background-color: gray;
+        }
+
+        .active {
+            background-color: black;
+        }
+    </style>
+    <script>
+        // 3 * 5 方格代表一个数字
+
+        var nums = [
+            [
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 0],
+                [0, 1, 0],
+                [0, 1, 0],
+                [0, 1, 0],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+            [
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+            ],
+            [
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+            ],
+            [
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+        ];
+        //函数： 生成[h1,h2,m1,m2,s1,s2]里的i
+        function createI(obj) {
+            for (let i = 1; i <= 15; i++) {
+                obj.appendChild(document.createElement('i'));
+            }
+        }
+
+        // 生成[h1,h2,m1,m2,s1,s2]
+        createI(document.querySelector('.h1'));
+        createI(document.querySelector('.h2'));
+        createI(document.querySelector('.m1'));
+        createI(document.querySelector('.m2'));
+        createI(document.querySelector('.s1'));
+        createI(document.querySelector('.s2'));
+
+
+        // let h1 = document.querySelector('.h1');
+        // for (let i = 1; i <= 15; i++) {
+        //     h1.appendChild(document.createElement('i'));
+        // }
+
+        // [
+        //     [1, 1, 1],
+        //     [1, 0, 1],
+        //     [1, 1, 1],
+        //     [1, 0, 1],
+        //     [1, 1, 1],
+        // ],
+
+        // 让[h1,h2,m1,m2,s1,s2] 中的某一个显示数字num
+        function showNum(obj, num) {
+            let allI = obj.querySelectorAll('i');
+            nums[num].forEach((v, i) => {
+                v.forEach((cV, j) => {
+                    if (cV == 1) {
+                        allI[i * 3 + j].classList.add('active');
+                        allI[i * 3 + j].classList.remove('notActive');
+                    } else {
+                        allI[i * 3 + j].classList.add('notActive');
+                        allI[i * 3 + j].classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // let allI = h1.querySelectorAll('i');
+        // nums[8].forEach((v, i) => {
+        //     v.forEach((cV, j) => {
+        //         if (cV == 1) {
+        //             allI[i * 3 + j].classList.add('active');
+        //             allI[i * 3 + j].classList.remove('notActive');
+        //         } else {
+        //             allI[i * 3 + j].classList.add('notActive');
+        //             allI[i * 3 + j].classList.remove('active');
+        //         }
+        //     });
+        // });
+
+        setInterval(() => {
+            let now = new Date();
+
+            let hh = now.getHours() < 10 ? '0' + now.getHours() : '' + now.getHours();
+            let mm = now.getMinutes() < 10 ? '0' + now.getMinutes() : '' + now.getMinutes();
+            let ss = now.getSeconds() < 10 ? '0' + now.getSeconds() : '' + now.getSeconds();
+
+            showNum(document.querySelector('.s1'), parseInt(ss[0]));
+            showNum(document.querySelector('.s2'), parseInt(ss[1]));
+
+            showNum(document.querySelector('.m1'), parseInt(mm[0]));
+            showNum(document.querySelector('.m2'), parseInt(mm[1]));
+
+            showNum(document.querySelector('.h1'), parseInt(hh[0]));
+            showNum(document.querySelector('.h2'), parseInt(hh[1]));
+        }, 500);
+    </script>
+</body>
+
+</html>
