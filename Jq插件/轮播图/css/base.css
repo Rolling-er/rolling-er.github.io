@@ -1,0 +1,334 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+.tit {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 30px auto;
+}
+.lb {
+    width: 1200px;
+    margin: 40px auto;
+   
+}
+.lb .cont {
+    height: 200px;
+    overflow: hidden;
+    margin: 40px auto;
+}
+
+.lb .cont .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.lb .cont .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.lb .cont .swiper-slide .item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.lb .cont .swiper-slide .pic {
+    width: 100%;
+    height: 80%;
+}
+
+.lb .cont .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.btnbox {
+    width: 1200px;
+    margin: 40px auto;
+}
+.btnbox .btn {
+    border-radius: 18px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 180px;
+    border: 0 ;
+    cursor:pointer;
+    background: red;
+    color: #fff;
+    margin-right: 30px;
+}
+.btnbox .active {
+    background: #e70;
+    cursor: pointer;
+}
+.container_small_tip {
+    position: relative;
+    width: 100%;
+    padding: 0 30px;
+    line-height: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.container_small_tip .content_small_tip {
+    width: 80%;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    position:absolute;
+    z-index: 2;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.container_small_tip .content_small_tip2 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+menu,
+footer,
+header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font: normal 14px/24px "Microsoft YaHei"
+}
+*{
+    box-sizing: border-box;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+
+fieldset,
+img {
+    border: 0
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #ee7700
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ellipsis{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ellipsis2 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+.ellipsis3 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;} 
+.no-margin{ margin-right: 0 !important;  }
+
+.no-margin {
+    margin-right: 0 !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.none {
+    display: none;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+
+.btn {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn-check:focus + .btn, .btn:focus{
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+.btn-red {
+    background: #E5505F;
+    color: #FFFFFF;
+}
+.btn-red:hover {
+    background: #e0394a;
+     color: #FFFFFF;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    -webkit-zoom: 1;
+    -moz-zoom: 1;
+    -ms-zoom: 1;
+    -o-zoom: 1;
+    zoom: 1;
+    *zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    content: "";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+input:focus-visible {
+    border: 0;
+    outline: none;
+}
+
+.tit {
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+}
+.lb1 {
+    width: 1200px;
+   margin: 50px auto;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   height: 200px;
+   position: relative;
+}
+
+.lb1 .swiper-slide a {
+    width: auto;
+    height: 200px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.lb1 .swiper-slide a img {
+    width: auto;
+    height: 100%;
+    display: block;
+}
+
+
+
+.lb1 .swiper-slide {
+    width: auto;
+
+}
+
+.lb1 .swiper-button-prev {
+    left: -39px;
+    width: 34px;
+    height: 34px;
+    background: url(../images/biaoqian-arrowL.png) center no-repeat;
+    border-radius: 2px;
+    top: calc(50% - 17px);
+}
+.lb1 .swiper-button-prev:hover {
+    background: url(../images/biaoqian-arrowL-sel.png) center no-repeat;
+}
+.lb1 .swiper-button-next {
+    right: -39px;
+    width: 34px;
+    height: 34px;
+    background: url(../images/biaoqian-arrowR.png) center no-repeat;
+    border-radius: 2px;
+    top: calc(50% - 17px);
+}
+.lb1 .swiper-button-next:hover {
+    background: url(../images/biaoqian-arrowR-sel.png) center no-repeat;
+}
+
+.none {
+    display: none;
+}

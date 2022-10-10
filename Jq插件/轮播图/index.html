@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script  type="text/javascript" src="js/template-web.js"></script>
+    <title>多组轮播图切换</title>
+</head>
+ 
+<body>
+    <div class="tit">文字超出隐藏 鼠标点击滚动 多组轮播图切换</div>
+    <div class="lb" id="lb"></div>
+    <div class="btnbox">
+        <button class="btn active" onclick="changeGroup(0)">分组1</button>
+        <button class="btn" onclick="changeGroup(1)">分组2</button>
+        <button class="btn" onclick="changeGroup(2)">分组3</button>
+    </div>
+    <div class="tit" style="margin: 20px auto;">个数自适应</div>
+	 <div style="width: 1200px;margin: 0 auto;">
+		 <p>*根据slide的宽度自动调整展示数量</p>
+		 <p>*定义slides的5个为一组</p>
+	 </div>
+      <div class="lb1" style="width: 1200px;margin: 0 auto;">
+                <div class="swiper-container swiper-container1">
+                    <div class="swiper-wrapper" id="key-links-words2" >
+					    <div class="swiper-slide" >
+					        <a href="javascript:" class="ellipsis" >
+								<img src="./images/1.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+					         <a href="javascript:" class="ellipsis"  >
+								<img src="./images/2.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/3.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/4.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/5.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/6.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/7.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/8.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/9.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/10.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/11.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/12.png" alt="">
+							</a>
+					    </div>
+
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/7.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/8.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/9.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/7.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide">
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/8.png" alt="">
+							</a>
+					    </div>
+					    
+					    <div class="swiper-slide" >
+							<a href="javascript:" class="ellipsis"  >
+								<img src="./images/9.png" alt="">
+							</a>
+					    </div>
+				</div>
+                </div>
+                <div class="swiper-button-next swiper-button-next1"></div>
+                <div class="swiper-button-prev swiper-button-prev1"></div>
+       </div>
+</body>
+<script type="text/html" id="lb-tpl">
+    {{each data item i}}
+    <div class="cont none">
+        <div class="swiper mySwiper{{i}}">
+            <div class="swiper-wrapper">
+                {{each item.list sub k }}
+              <div class="swiper-slide">
+                 <div class="item">
+                    <div class="pic">
+                        <img src="{{sub.url}}">
+                        
+                     </div>
+                     <div id="container_small_tip{{i}}_{{k}}" class="container_small_tip">
+                        <div id="content_small_tip" class="content_small_tip" onclick=" handerWordRoll('{{i}}','{{k}}')">
+                        超出省略号省略号省略号省略号省略号省略号省略号省略号省略号省略号省略号省略号</div>
+                    </div>
+                    
+                 </div>
+              </div>
+              {{/each}}
+            
+            </div>
+        </div> 
+    </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript" src="js/lb.js"></script>
+<script>
+    info();
+   
+  </script>
+</html>
